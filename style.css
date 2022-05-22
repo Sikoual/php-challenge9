@@ -18,3 +18,16 @@ a {
     color: black;
     text-decoration: none;
 }
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+}
+form div{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
