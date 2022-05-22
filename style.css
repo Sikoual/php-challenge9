@@ -31,3 +31,7 @@ form div{
     flex-flow: column wrap;
     justify-content: center;
 }
+.text-danger{
+    color: #970404;
+    font-weight: bold;
+}
