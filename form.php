@@ -94,77 +94,77 @@
     <title>Challenge 8</title>
 </head>
 <body>
-<form action="form.php" method="post">
+    <form action="form.php" method="post">
+        <div>
+            <label for="firstname">Prénom</label>
+            <input type="text" name="firstname" id="firstname" required="required" value= <?= $firstname ?? "" ?>>
+            <?php
+                if ($errors['firstname']) : ?>
+                    <p class="text-danger"> <?= $errors['firstname'] ?> </p>
+                <?php
+                endif; ?>
+        </div>
+        <div>
+            <label for="lastname">Nom</label>
+            <input type="text" name="lastname" id="lastname" required="required" value= <?= $lastname ?? "" ?>>
+            <?php
+                if ($errors['lastname']) : ?>
+                    <p class="text-danger"> <?= $errors['lastname'] ?> </p>
+                <?php
+                endif; ?>
+        </div>
+        <div>
+            <label for="firstname">Email</label>
+            <input type="email" name="email" id="email" required="required" value= <?= $email ?? "" ?>>
+            <?php
+                if ($errors['email']) : ?>
+                    <p class="text-danger"> <?= $errors['email'] ?> </p>
+                <?php
+                endif; ?>
+        </div>
+        <div>
+            <label for="cellphone">Numéro portable</label>
+            <input type="tel" name="cellphone" id="cellphone" required="required" value= <?= $cellphone ?? "" ?>>
+            <?php
+                if ($errors['cellphone']) : ?>
+                    <p class="text-danger"> <?= $errors['cellphone'] ?> </p>
+                <?php
+                endif; ?>
+        </div>
+        <div>
+            <label for="subjects">Sujets</label>
+            <select name="subjects" id="subjects">
+                <option value="politic">Politique</option>
+                <option value="sport">Sport</option>
+                <option value="technology">Technologie</option>
+                <option value="business">Business</option>
+            </select>
+            <?php
+                if ($errors['subjects']) : ?>
+                    <p class="text-danger"> <?= $errors['subjects'] ?> </p>
+                <?php
+                endif; ?>
+        </div>
+        <div>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" required="required" value= <?= $message ?? "" ?>></textarea>
+            <?php
+                if ($errors['message']) : ?>
+                    <p class="text-danger"> <?= $errors['message'] ?> </p>
+                <?php
+                endif; ?>
+        </div>
+        <div class="button">
+            <button type="submit">Envoyer votre message</button>
+        </div>
+    </form>
     <div>
-        <label for="firstname">Prénom</label>
-        <input type="text" name="firstname" id="firstname" required="required" value= <?= $firstname ?? "" ?>>
         <?php
-            if ($errors['firstname']) : ?>
-                <p class="text-danger"> <?= $errors['firstname'] ?> </p>
+            if ($completeForm): ?>
+                <p> <?= $thank ?? ""?> </p>
             <?php
             endif; ?>
     </div>
-    <div>
-        <label for="lastname">Nom</label>
-        <input type="text" name="lastname" id="lastname" required="required" value= <?= $lastname ?? "" ?>>
-        <?php
-            if ($errors['lastname']) : ?>
-                <p class="text-danger"> <?= $errors['lastname'] ?> </p>
-            <?php
-            endif; ?>
-    </div>
-    <div>
-        <label for="firstname">Email</label>
-        <input type="email" name="email" id="email" required="required" value= <?= $email ?? "" ?>>
-        <?php
-            if ($errors['email']) : ?>
-                <p class="text-danger"> <?= $errors['email'] ?> </p>
-            <?php
-            endif; ?>
-    </div>
-    <div>
-        <label for="cellphone">Numéro portable</label>
-        <input type="tel" name="cellphone" id="cellphone" required="required" value= <?= $cellphone ?? "" ?>>
-        <?php
-            if ($errors['cellphone']) : ?>
-                <p class="text-danger"> <?= $errors['cellphone'] ?> </p>
-            <?php
-            endif; ?>
-    </div>
-    <div>
-        <label for="subjects">Sujets</label>
-        <select name="subjects" id="subjects">
-            <option value="politic">Politique</option>
-            <option value="sport">Sport</option>
-            <option value="technology">Technologie</option>
-            <option value="business">Business</option>
-        </select>
-        <?php
-            if ($errors['subjects']) : ?>
-                <p class="text-danger"> <?= $errors['subjects'] ?> </p>
-            <?php
-            endif; ?>
-    </div>
-    <div>
-        <label for="message">Message</label>
-        <textarea name="message" id="message" required="required" value= <?= $message ?? "" ?>></textarea>
-        <?php
-            if ($errors['message']) : ?>
-                <p class="text-danger"> <?= $errors['message'] ?> </p>
-            <?php
-            endif; ?>
-    </div>
-    <div class="button">
-        <button type="submit">Envoyer votre message</button>
-    </div>
-</form>
-<div>
-    <?php
-        if ($completeForm) : ?>
-            <p> <?= $thank ?> </p>
-        <?php
-        endif; ?>
-</div>
 </body>
 </html>
 
